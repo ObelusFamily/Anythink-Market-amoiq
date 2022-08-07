@@ -11,3 +11,7 @@ When implementing a new feature or fixing a bug, please create a new pull reques
 ## First setup
 
 **[TODO 05/01/2018 @vanessa-cooper]:** _It's been a while since anyone ran a fresh copy of this repo. I think it's worth documenting the steps needed to install and run the repo on a new machine?_
+
+clone the repo and create a new branch in that repo and further add the file and make a pull request
+
+install docker and access the frontend and backend and just follow the commands and steps provided during the quest and your are good to go !
