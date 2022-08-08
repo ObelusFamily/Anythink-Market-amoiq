@@ -29,7 +29,7 @@ async def retrieve_current_user(
             username=user.username,
             email=user.email,
             bio=user.bio,
-            image=user.image,
+            image="placeholder.png",
             token=token,
         ),
     )
