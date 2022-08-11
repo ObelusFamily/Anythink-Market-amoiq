@@ -40,9 +40,11 @@ router.get("/", auth.optional, function(req, res, next) {
   var query = {};
   var limit = 100;
   var offset = 0;
+  var title = "";
 
   if (typeof req.query.title !== "undefined") {
-    query.title = { $regex: req.query.title, $options: 'i' } ;
+    var regex = new RegExp(title, "i");
+    query.title = regex;
   }
 
   if (typeof req.query.limit !== "undefined") {
