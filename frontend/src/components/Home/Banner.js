@@ -1,33 +1,39 @@
 import React from "react";
+import React, { useState } from "react";
 import logo from "../../imgs/logo.png";
 import { AiOutlineSearch } from "react-icons/ai";
 
 const Banner = (props) => {
+   const [isVisible, setIsVisible] = useState(false);
+
   return (
     <div className="banner text-white">
       <div className="container p-4 text-center">
         <img src={logo} alt="banner" />
         <div>
-          <span id="get-part">A place to get</span>
-          <span className="mx-2 mw-25 position-relative">
+          <span>
+            {" "}
+            A place to{" "}
+            <span
+              id="word-get"
+              onClick={() => {
+                setIsVisible(!isVisible);
+              }}
+            >
+              get
+            </span>{" "}
+          </span>
+          {isVisible ? (
             <input
               id="search-box"
-              style={{ minWidth: "400px" }}
-              className="w-25 p-2"
-              placeholder="What is it you truly desire?"
-              value={props.term}
-              onChange={(e) => props.setTerm(e.target.value)}
-            ></input>
-            <AiOutlineSearch
-              className="position-absolute text-black text-muted"
-              style={{
-                top: "50%",
-                transform: "translateY(-50%)",
-                right: "2%",
-                fontSize: "x-large",
-              }}
+              className="rounded mx-4 px-4 py-2 w-25"
+              placeholder="What is it that you truly desire?"
+              onChange={onChangeHandler}
             />
-          </span>
+            
+          ) : (
+            <span>&nbsp;</span>
+          )}
           <span> the cool stuff.</span>
         </div>
       </div>
