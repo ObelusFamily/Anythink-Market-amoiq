@@ -18,6 +18,10 @@ const reducer = (state = {}, action) => {
     case ITEM_UNFAVORITED:
       return {
         ...state,
+        searchTitle:
+          action.searchTitle && action.searchTitle.length > 2
+            ? action.searchTitle
+            : undefined,
         items: state.items.map((item) => {
           if (item.slug === action.payload.item.slug) {
             return {
