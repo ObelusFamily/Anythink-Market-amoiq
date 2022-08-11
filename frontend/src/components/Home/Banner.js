@@ -3,6 +3,21 @@ import logo from "../../imgs/logo.png";
 import { AiOutlineSearch } from "react-icons/ai";
 
 const Banner = (props) => {
+  const searchRef = useRef();
+  const searchBoxRef = useRef();
+
+  function toggleSearchBox() {
+    searchBoxRef.current.classList.toggle("hide");
+  }
+
+  useEffect(() => {
+    searchRef.current.addEventListener("click", toggleSearchBox);
+
+    return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      searchRef.current.removeEventListener("click", toggleSearchBox);
+    };
+  }, []);
   return (
     <div className="banner text-white">
       <div className="container p-4 text-center">
